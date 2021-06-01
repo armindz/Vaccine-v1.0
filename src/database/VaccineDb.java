@@ -2,27 +2,31 @@ package database;
 
 import java.util.ArrayList;
 
-import org.hibernate.*;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
 import models.User;
 import models.Vaccine;
 
-public class UserDb {
+public class VaccineDb {
 
-	public void storeUser(User user) {
+	
+	public void storeVaccine(Vaccine vaccine) {
 
 		try {
 
-			Configuration cfg = new Configuration().configure().addAnnotatedClass(User.class).addAnnotatedClass(Vaccine.class);
+			Configuration cfg = new Configuration().configure().addAnnotatedClass(Vaccine.class);
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 					.applySettings(cfg.getProperties()).build();
 			SessionFactory sessionFactory = cfg.buildSessionFactory(serviceRegistry);
 			Session session = sessionFactory.openSession();
 
 			Transaction transaction = session.beginTransaction();
-			session.save(user);
+			session.save(vaccine);
 			transaction.commit();
 		}
 
@@ -31,17 +35,16 @@ public class UserDb {
 		}
 	}
 	
-	
-	public void removeUser(User user) {
+	public void removeVaccine(Vaccine vaccine) {
 		try {
-			Configuration cfg = new Configuration().configure().addAnnotatedClass(User.class).addAnnotatedClass(Vaccine.class);;
+			Configuration cfg = new Configuration().configure().addAnnotatedClass(Vaccine.class);;
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 					.applySettings(cfg.getProperties()).build();
 			SessionFactory sessionFactory = cfg.buildSessionFactory(serviceRegistry);
 			Session session = sessionFactory.openSession();
 
 			Transaction transaction = session.beginTransaction();
-			session.delete(user);
+			session.delete(vaccine);
 			transaction.commit();
 		}
 		
@@ -49,47 +52,46 @@ public class UserDb {
 			e.printStackTrace();
 		}
 	}
-	
 	@SuppressWarnings("unchecked")
-	public ArrayList<User> fetchUserDatabase () {
+	public ArrayList<Vaccine> fetchVaccineDatabase () {
 		
-		ArrayList <User> listOfUsers = new ArrayList<User>();
+		ArrayList <Vaccine> listOfVaccines = new ArrayList<Vaccine>();
 		try {
-			Configuration cfg = new Configuration().configure().addAnnotatedClass(User.class).addAnnotatedClass(Vaccine.class);
+			Configuration cfg = new Configuration().configure().addAnnotatedClass(Vaccine.class);
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 					.applySettings(cfg.getProperties()).build();
 			SessionFactory sessionFactory = cfg.buildSessionFactory(serviceRegistry);
 			Session session = sessionFactory.openSession();
 
 			Transaction transaction = session.beginTransaction();
-			listOfUsers = (ArrayList<User>) session.createQuery("from User").list();
+			listOfVaccines = (ArrayList<Vaccine>) session.createQuery("from Vaccine").list();
 			transaction.commit();
-			return listOfUsers;
+			return listOfVaccines;
 		}
 		
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		return listOfUsers;
+		return listOfVaccines;
 	}
 	
 	
 	@SuppressWarnings("unchecked")
-	public int generateUserId () {
+	public int generateVaccineId () {
 		
-		ArrayList <User> listOfUsers = new ArrayList<User>();
+		ArrayList <Vaccine> listOfVaccines = new ArrayList<Vaccine>();
 		try {
-			Configuration cfg = new Configuration().configure().addAnnotatedClass(User.class).addAnnotatedClass(Vaccine.class);
+			Configuration cfg = new Configuration().configure().addAnnotatedClass(Vaccine.class);
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 					.applySettings(cfg.getProperties()).build();
 			SessionFactory sessionFactory = cfg.buildSessionFactory(serviceRegistry);
 			Session session = sessionFactory.openSession();
 
 			Transaction transaction = session.beginTransaction();
-			listOfUsers = (ArrayList<User>) session.createQuery("from User order by id desc").list();
+			listOfVaccines = (ArrayList<Vaccine>) session.createQuery("from Vaccine order by vaccine_ID desc").list();
 			transaction.commit();
-			return listOfUsers.get(0).getUserId();
+			return listOfVaccines.get(0).getVaccineId();
 		}
 		
 		catch(Exception e) {
@@ -99,5 +101,4 @@ public class UserDb {
 		return 0;
 	}
 	
-
 }
