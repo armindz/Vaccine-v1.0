@@ -10640,5 +10640,10 @@ fieldset:disabled .btn {
     margin-left: 10px;
 }
 
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
 
 /*# sourceMappingURL=bootstrap.css.map */

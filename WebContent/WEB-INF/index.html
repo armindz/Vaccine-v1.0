@@ -33,18 +33,19 @@
 
     <div class="container">
 
-        <form class="col-4 row d-flex justify-content-center mx-auto">
+        <form class="col-10 col-sm-8 col-md-6 col-lg-4 row d-flex justify-content-center mx-auto">
 
-            <input class="my-4 rounded-pill bg-transparent" type="text" name="user-name" placeholder="Name">
-            <input class="my-4 rounded-pill bg-transparent" type="text" name="user-surname" placeholder="Surname">
-            <input class="my-4 rounded-pill bg-transparent" type="number" name="user-jmbg" placeholder="JMBG">
-            <select class="my-4 rounded-pill bg-transparent" name="user-vaccines" placeholder="Type of vaccine">
+            <input class="my-4 rounded-pill bg-transparent form-control" type="text" name="user-name" placeholder="Name">
+            <input class="my-4 rounded-pill bg-transparent form-control" type="text" name="user-surname" placeholder="Surname">
+            <input class="my-4 rounded-pill bg-transparent form-control" type="number" name="user-jmbg" placeholder="JMBG">
+            <select class="my-4 rounded-pill bg-transparent form-control text-secondary" name="user-vaccines" placeholder="Type of vaccine">
+                <option value="" selected disabled hidden>Choose vaccine </option>
                 <option value="AstraZeneca" name="0" >AstraZeneca</option>
                 <option value="Pfizer-BioNTech" name="1">Pfizer-BioNTech</option>
                 <option value="Moderna" name="2">Moderna</option>
                 <option value="Johnson & Johnson" name="3">Johnson & Johnson</option>
             </select>
-            <div class="row my-3 rounded-pill bg-transparent ">
+            <div class="row my-3 col-12 bg-transparent ">
                 <input type="checkbox" class="col-1 my-auto" id="agreement1" value="1" name="agreement">
                 <label for="agreement1" class="col-11 text-break">I agree with the fact that my personal data will be used & stored in the database by "Vaccine" for the processing of my inquiry. </label>
             </div>
