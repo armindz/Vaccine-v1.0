@@ -22,34 +22,86 @@
 
 <body>
 
-
     <header>
-        <div class="navbar">
-            <a id="logo" class="navbar-brand col-2" href="#"><img src="res/img/icon/Vaccine2.png"></a>
 
-        </div>
+        <nav class="navbar navbar-expand-md">
+            <div class="col-2 mx-auto d-none d-lg-block">
+                <a id="logo" class="navbar-brand mx-auto" href="#"><img src="res/img/icon/Vaccine2.png"></a>
+            </div>
+            <div class="col-6 mx-auto d-none d-lg-block">
+                <ul class=" border mx-auto"></ul>
+
+            </div>
+
+            <div class="col-2 mx-auto d-none d-lg-block">
+                <h3 id="navbar-text" class="ff-lato fst-italic text-secondary mx-auto">#getVaccinated</h3>
+
+            </div>
+
+            </div>
+        </nav>
+
     </header>
 
 
     <div class="container">
 
+
+
+
+        <h3 class="mx-auto text-center text-secondary my-3 ff-lato">CONSENT FORM – COVID-19 Vaccine</h3>
         <form class="col-10 col-sm-8 col-md-6 col-lg-4 row d-flex justify-content-center mx-auto">
 
-            <input class="my-4 rounded-pill bg-transparent form-control" type="text" name="user-name" placeholder="Name">
-            <input class="my-4 rounded-pill bg-transparent form-control" type="text" name="user-surname" placeholder="Surname">
-            <input class="my-4 rounded-pill bg-transparent form-control" type="number" name="user-jmbg" placeholder="JMBG">
-            <select class="my-4 rounded-pill bg-transparent form-control text-secondary" name="user-vaccines" placeholder="Type of vaccine">
+
+
+
+
+
+            <div class="row mx-auto my-4 p-0">
+                <div class="col-6 pe-2 ps-0">
+                    <input class="rounded-pill bg-transparent form-control form-shadow ff-inter" type="text" name="user-name" placeholder="First name">
+
+
+                </div>
+                <div class="col-6 ps-2 pe-0">
+                    <input class="rounded-pill bg-transparent form-control form-shadow ff-inter" type="text" name="user-surname" placeholder="Last name">
+
+                </div>
+            </div>
+
+            <input class="my-4 rounded-pill bg-transparent form-control form-shadow ff-inter" type="number" name="user-jmbg" placeholder="JMBG">
+            <input class="my-4 rounded-pill bg-transparent form-control form-shadow ff-inter" type="tel" name="user-phone" placeholder="Phone number">
+
+
+            <select class="my-4 rounded-pill bg-transparent form-control text-secondary form-shadow ff-inter" name="user-vaccines" placeholder="Type of vaccine">
                 <option value="" selected disabled hidden>Choose vaccine </option>
                 <option value="AstraZeneca" name="0" >AstraZeneca</option>
                 <option value="Pfizer-BioNTech" name="1">Pfizer-BioNTech</option>
                 <option value="Moderna" name="2">Moderna</option>
                 <option value="Johnson & Johnson" name="3">Johnson & Johnson</option>
             </select>
+            <p class="col-12 mx-auto text-secondary">Is this your first or second dose of the vaccine?</p>
+            <div class="row my-3 col-10 mx-auto bg-transparent ">
+
+                <input type="radio" class="col-1 my-auto" id="first-dose" value="1" name="dose-no">
+                <label for="first-dose" class="col-4 text-break ff-lato "> First</label>
+
+                <input type="radio" class="col-1 my-auto" id="second-dose" value="2" name="dose-no">
+                <label for="second-dose" class="col-4 text-break ff-lato "> Second</label>
+
+
+            </div>
+
+
+
             <div class="row my-3 col-12 bg-transparent ">
                 <input type="checkbox" class="col-1 my-auto" id="agreement1" value="1" name="agreement">
-                <label for="agreement1" class="col-11 text-break">I agree with the fact that my personal data will be used & stored in the database by "Vaccine" for the processing of my inquiry. </label>
+                <label for="agreement1" class="col-11 text-break ff-lato ">I agree with the fact that my personal data will be used & stored in the database by "Vaccine" for the processing of my inquiry. </label>
+
+                <input type="checkbox" class="col-1 my-auto" id="agreement-terms" value="1" name="agreement-terms">
+                <label for="agreement-terms" class="col-11 my-2 text-break ff-lato ">I have read & I agree to the <a href="termsandconditions.html" class="fst-underline"> Terms and Conditions</a>.</label>
             </div>
-            <input type="submit" class="btn btn-secondary mx-auto d-block my-5 rounded-pill">
+            <input type="submit" class="btn btn-secondary mx-auto col-8 d-block ff-inter form-shadow my-5 rounded-pill">
 
         </form>
 
