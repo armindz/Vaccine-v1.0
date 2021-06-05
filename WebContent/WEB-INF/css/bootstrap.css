@@ -10640,6 +10640,10 @@ fieldset:disabled .btn {
     margin-left: 10px;
 }
 
+#logo img:hover {
+    transform: scale(1.02);
+}
+
 .form-control:focus {
     border-color: #28a745;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
@@ -10657,6 +10661,19 @@ fieldset:disabled .btn {
 .ff-lato {
     font-family: Lato;
     font-weight: 600;
+}
+
+#vaccination-process-img {
+    max-width: 300px;
+}
+
+.headingBorderBottom {
+    height: 1px;
+    max-width: 100px;
+}
+
+#logo-small img {
+    max-width: 50px;
 }
 
 
