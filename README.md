@@ -9,21 +9,6 @@
 <br />
 <br />
 
-**User should input personal data in order to get vaccinated**:
-
-• First name
-
-•	Last name
-
-•	JMBG (Unique Master Citizen Number)
-
-• Phone number ( ussually in xxx / xxx - xxx format )
-
-• Type of vaccine (earlier stored & now loaded from database)
-
-• Choose if it is first or second vaccination
-
-
 
 
 ## *Installation*
@@ -42,8 +27,8 @@
 
 ## *Usage*
 
-Once Tomcat server is configured, project can be run in your IDE by right click on **login.jsp** in project menu (WebContent) > Run as > Run on server.
-It should navigate you to login form. (**Username**: admin ; **Password**: admin). After typed login data you should be redirected to index.html (homepage).
+Once Tomcat server is configured, project can be run in your IDE by right click on **index.jsp** in project menu (WebContent) > Run as > Run on server.
+It should navigate you to homepage.  After typed user personal data at the end of the page you should get confirmation message.
 
 *At homepage you can choose* :
 
